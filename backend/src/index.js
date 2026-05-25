@@ -7,6 +7,11 @@ const errorMiddleware = require("../middleware/errorMiddleware");
 
 dotenv.config();
 
+// Set NODE_ENV to production if not set
+if (!process.env.NODE_ENV) {
+  process.env.NODE_ENV = "development";
+}
+
 const authRoutes = require("../routes/authRoutes");
 const uploadRoutes = require("../routes/uploadRoutes");
 const analysisRoutes = require("../routes/analysisRoutes");
